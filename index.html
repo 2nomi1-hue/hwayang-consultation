@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="화양연화 상담 내용을 정리하고 로컬 LLM Wiki용 기록을 만드는 화면">
+  <title>화양연화 — 상담 기록</title>
+  <style>
+:root{--ink:#263d35;--green:#285b49;--muted:#7d877b;--line:#dee3d8;--paper:#f5f5ef;--white:#fff;--pale:#e9efdf}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 "Malgun Gothic","Apple SD Gothic Neo",sans-serif;word-break:keep-all}button,input,textarea,select{font:inherit}button,a,input,textarea,select{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}[hidden]{display:none!important}a{color:inherit}.topbar{height:90px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 max(30px,calc((100vw - 1280px)/2))}.brand{text-decoration:none;font-weight:700;font-size:25px;letter-spacing:-1px}.brand span{font-size:11px;color:var(--muted);font-weight:400;display:block;letter-spacing:0}.top-note{font-size:10px;letter-spacing:3px;color:var(--muted)}.badge{font-size:11px;padding:5px 11px;border:1px solid #ccd8be;color:var(--green);border-radius:20px;white-space:nowrap}main{max-width:1340px;margin:auto;padding:0 30px}.intro{display:flex;justify-content:space-between;gap:40px;padding:55px 0 40px;align-items:center}.eyebrow{font-size:11px;letter-spacing:1px;color:var(--green);font-weight:700;margin:0 0 14px}h1{font-size:43px;line-height:1.35;letter-spacing:-2px;margin:0 0 20px;font-weight:600}.lead{color:#72806e;font-size:14px;margin:0}.intro-card{border-left:1px solid #cad5be;padding:8px 0 8px 35px;min-width:300px}.flower{font-size:50px;line-height:1;color:#96a66c}.intro-card p{font-size:17px;font-weight:600;margin:12px 0}.intro-card small{font-size:12px;color:var(--muted)}.workspace{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(340px,1fr);gap:32px;align-items:start}form{background:white;border:1px solid var(--line);border-radius:14px;padding:30px}.form-top{display:flex;align-items:center;justify-content:space-between;gap:14px}h2{font-size:22px;font-weight:600;line-height:1.5;margin:0 0 9px;letter-spacing:-.5px}.muted{font-size:12px;color:var(--muted);margin:0;white-space:pre-wrap}.text-button{background:none;border:0;color:var(--green);padding:0;font-size:12px;text-align:left;white-space:normal}.text-button:hover{text-decoration:underline}.section{border-top:1px solid #e7ebdf;margin-top:25px;padding-top:24px}.section-heading{display:flex;align-items:center;gap:12px;margin-bottom:19px}.section-heading span{font-size:10px;color:var(--green);background:var(--pale);border-radius:50%;width:28px;height:28px;display:grid;place-items:center}.section h3{font-size:16px;font-weight:600;margin:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:12px;font-weight:600;margin:0 0 17px}input:not([type=checkbox]),select,textarea{display:block;width:100%;border:1px solid #d9dfd0;border-radius:7px;background:#fcfdf9;color:var(--ink);padding:11px 12px;margin-top:7px;font-size:14px;line-height:1.6}input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #73925a;outline-offset:3px}textarea{resize:vertical;min-height:75px}textarea::placeholder,input::placeholder{color:#a0a797;font-size:12px}.hint{font-size:11px;color:#88917d;margin:4px 0 16px}.primary,.secondary{border-radius:7px;padding:11px 16px;font-size:13px;text-align:center}.primary{background:var(--green);color:white;border:1px solid var(--green)}.primary:hover{background:#1f4b3b}.secondary{background:white;color:var(--green);border:1px solid #cdd7bf}.secondary:hover{background:#f3f6eb}.actions{display:flex;align-items:center;gap:12px;margin-top:20px}.actions .primary{flex:1;text-align:left;display:flex;justify-content:space-between}.actions .secondary{font-size:11px}.form-error{color:#a34b39;font-size:12px;white-space:pre-wrap}fieldset{padding:0;border:0;margin:24px 0 0}legend{font-size:12px;font-weight:600;margin-bottom:12px}.optional{font-size:10px;color:var(--muted);font-weight:400;margin-left:8px}.hypotheses{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hypotheses label{margin:0;font-size:11px;font-weight:400;display:flex;align-items:center;gap:7px}.hypotheses input{accent-color:var(--green)}.preview-column{position:sticky;top:25px;display:grid;gap:20px}.preview{background:#e9efdf;border:1px solid #d9e2ca;border-radius:14px;padding:28px}.preview-head{display:flex;justify-content:space-between;align-items:start;gap:10px}.preview-head .eyebrow{font-size:9px;margin-top:6px}.preview-head .badge{background:#f6f8ef}.preview h2{font-size:23px;margin-top:6px}.empty-symbol{font-size:65px;color:#a2b482;text-align:center;line-height:1.1;margin:30px 0 14px}#empty{text-align:center;padding:10px 0 25px}#empty p{font-size:13px;color:#7d8a71}#empty .text-button{font-size:11px;margin-top:18px}.record-id{font-size:10px;overflow-wrap:anywhere;color:#7f8c71;margin:20px 0}dl{margin:0}dt{font-size:10px;color:#7a876e;margin-top:17px}dd{font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere;margin:3px 0}.quote{border-left:3px solid #acb88c;padding:9px 0 9px 14px;margin:23px 0 17px;font-size:14px;white-space:pre-wrap}.downloads{display:grid;gap:9px;margin:24px 0 13px}.preview .hint{font-size:10px}.guide{border:1px solid var(--line);background:#fff;border-radius:12px;padding:22px 25px}.guide h3{font-size:14px;margin:0 0 16px}.guide ol{padding-left:20px;font-size:12px;color:#738168;margin-bottom:20px}.guide li{padding:0 0 13px 5px}.guide b{font-weight:500;color:var(--ink)}code{font-family:monospace;font-size:11px;overflow-wrap:anywhere}.guide p{font-size:11px;color:var(--muted);margin:0}details{border-top:1px solid #cfd9bf;padding-top:15px;margin-top:15px}summary{font-size:11px;cursor:pointer;color:var(--green)}pre{font-size:10px;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f8ed;padding:12px;border-radius:5px;max-height:350px;overflow:auto}#status{font-size:11px;color:var(--green);margin:12px 0 0}footer{border-top:1px solid var(--line);margin:45px 0 0;padding:25px 0 35px;display:grid;grid-template-columns:100px 1fr;gap:5px 30px}footer b{grid-row:1/3;font-size:18px}footer p{font-size:10px;color:var(--muted);margin:0}@media(max-width:900px){.workspace{grid-template-columns:1fr}.preview-column{position:static}.intro-card{display:none}.intro{padding:35px 0}.top-note{display:none}h1{font-size:36px}.preview h2 br{display:none}}@media(max-width:500px){main{padding:0 18px}.topbar{padding:0 18px;height:75px}.topbar .badge{font-size:9px}.brand{font-size:22px}form{padding:22px 18px}.form-top{align-items:start;flex-direction:column}.two{grid-template-columns:1fr;gap:0}.actions{flex-direction:column;align-items:stretch}.preview{padding:24px}.hypotheses{grid-template-columns:1fr 1fr}footer{grid-template-columns:1fr}footer b{grid-row:auto}h1{font-size:31px}}
+
+</style>
+  
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./">화양연화<span>가족의 삶을, 오래도록.</span></a><span class="top-note">CONSULTATION JOURNAL</span><span class="badge">브라우저에서만 작성</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">화양연화 · 상담 기록 도구</p><h1>이야기의 시작을<br>차분히 기록해 주세요.</h1><p class="lead">누가, 어떤 계기로, 무엇을 남기고 싶어 하는지.<br>상담에서 들은 말과 아직 확인하지 못한 점을 구분해 정리합니다.</p></div><div class="intro-card"><span class="flower" aria-hidden="true">✳</span><p>입력 → 확인 → 파일 저장</p><small>문의 접수나 맥미니 자동 전송 기능은 없습니다.<br>작성한 내용은 JSON과 메모로 내려받습니다.</small></div></section>
+    <div class="workspace">
+      <form id="consultation" novalidate>
+        <div class="form-top"><div><h2>새 상담 기록</h2><p class="muted">별표(*)는 필수 항목입니다. 이름·연락처는 입력하지 않습니다.</p></div><button type="button" class="text-button" id="sample">가상 예시 채우기 ↗</button></div>
+        <section class="section"><div class="section-heading"><span>01</span><h3>누구의 이야기인가요?</h3></div>
+          <div class="two"><label>기록 날짜 *<input type="date" id="date" name="date" required></label><label>기록 구분 *<select id="mode" name="mode"><option value="demo">가상 시연 기록</option><option value="actual">실제 상담 기록</option></select></label></div>
+          <label>상담자의 역할 *<select id="role" name="role" required><option value="">역할을 선택해 주세요</option><option value="자녀·구매자 후보">자녀 · 구매자 후보</option><option value="부모·주인공">부모 · 기록의 주인공</option><option value="가족·참여자">가족 · 기록 참여자</option><option value="기관·제휴담당자">기관 · 제휴담당자</option><option value="other">기타 · 직접 입력</option></select></label>
+          <label id="other-role-wrap" hidden>역할 직접 입력 *<input id="other-role" maxlength="100" placeholder="예: 구매자이자 기록의 주인공"></label>
+          <p class="hint">역할은 이 상담에서의 관점입니다. 구매자와 주인공이 같은 사람일 수도 있습니다.</p>
+        </section>
+        <section class="section"><div class="section-heading"><span>02</span><h3>왜 지금 기록하고 싶나요?</h3></div>
+          <label>상황과 계기 *<textarea id="situation" name="situation" rows="2" maxlength="1000" required placeholder="예: 어머니의 칠순이 3개월 남았어요."></textarea></label>
+          <label>남기고 싶은 것 · 원하는 결과 *<textarea id="goal" name="goal" rows="2" maxlength="1000" required placeholder="예: 어머니의 삶과 목소리를 가족에게 남기고 싶어요."></textarea></label>
+          <label>걱정되거나 망설이는 점 *<textarea id="concern" name="concern" rows="2" maxlength="1000" required placeholder="예: 어머니가 카메라 앞에서 부담스러워하실까 걱정돼요."></textarea></label>
+        </section>
+        <section class="section"><div class="section-heading"><span>03</span><h3>어떻게 만나고, 어떤 말을 들었나요?</h3></div>
+          <label>알게 된 경로 *<select id="channel" name="channel" required><option value="">경로를 선택해 주세요</option><option>지인 소개</option><option>기관 소개</option><option>검색</option><option>소셜 미디어</option><option>직접 접촉</option><option value="other">기타 · 직접 입력</option></select></label>
+          <label id="other-channel-wrap" hidden>경로 직접 입력 *<input id="other-channel" maxlength="200" placeholder="상담에서 확인한 경로"></label>
+          <label>상담자의 발언 *<textarea id="quote" name="quote" rows="3" maxlength="2000" required placeholder="해석을 덧붙이기보다 실제 들은 말을 적어 주세요."></textarea></label>
+          <label>미확인 사항 · 추가로 물어볼 것<textarea id="limitations" name="limitations" rows="2" maxlength="1000" placeholder="예: 부모님의 참여 의사와 촬영 가능 일정은 아직 확인하지 못함"></textarea></label>
+          <fieldset><legend>관련 가설 <span class="optional">선택 · 담당자가 직접 연결</span></legend><div class="hypotheses"><label><input type="checkbox" name="hypothesis" value="H1">H1 가족 공유</label><label><input type="checkbox" name="hypothesis" value="H2">H2 구매·가격</label><label><input type="checkbox" name="hypothesis" value="H3">H3 기념일</label><label><input type="checkbox" name="hypothesis" value="H4">H4 부모 참여</label><label><input type="checkbox" name="hypothesis" value="H5">H5 기관 채널</label><label><input type="checkbox" name="hypothesis" value="H6">H6 기억 관리</label><label><input type="checkbox" name="hypothesis" value="H7">H7 제작·납기</label><label><input type="checkbox" name="hypothesis" value="H8">H8 보관 방식</label></div></fieldset>
+        </section>
+        <p class="form-error" id="error" role="alert"></p>
+        <div class="actions"><button class="primary" type="submit">기록 미리보기 <span>→</span></button><button type="button" class="secondary" id="new-record">새 기록으로 초기화</button></div>
+      </form>
+      <aside class="preview-column">
+        <section class="preview"><div class="preview-head"><p class="eyebrow">RECORD PREVIEW</p><span class="badge" id="mode-badge">가상 시연</span></div><h2>한 건의 상담이<br>다음 질문의 근거가 됩니다.</h2><div id="empty"><div class="empty-symbol" aria-hidden="true">✳</div><p>왼쪽 항목을 작성한 뒤<br>‘기록 미리보기’를 눌러 주세요.</p><button type="button" class="text-button" id="sample-preview">앞서 사용한 가상 상담 불러오기 ↗</button></div>
+          <div id="result" hidden><p class="record-id" id="record-id"></p><dl id="record-summary"></dl><div id="quote-preview" class="quote"></div><p id="record-limits" class="muted"></p><div class="downloads"><button type="button" class="primary" id="download-json">기록 JSON 저장 ↓</button><button type="button" class="secondary" id="download-md">상담 메모 저장 ↓</button></div><p class="hint">내용을 고치면 미리보기를 다시 확인한 뒤 저장해 주세요. 두 파일은 서로 연결된 한 건의 기록입니다.</p><details><summary>내보내는 JSON 보기</summary><pre id="json-preview"></pre></details></div>
+          <p id="status" role="status" aria-live="polite"></p>
+        </section>
+        <section class="guide"><h3>Wiki에 반영하는 순서</h3><ol><li><b>상담 메모(.md)</b>를<br><code>inbox/documents/</code>에 넣기</li><li><b>기록(.json)</b>을<br><code>inbox/records/</code>에 넣기</li><li>수집기 실행 중이면 다음 확인 주기에<br>고객 근거 현황·출처·이력 확인</li></ol><p>시연은 분리된 시연환경에서 진행합니다. 가상 기록은 실제 고객 근거로 집계하지 않습니다.</p></section>
+      </aside>
+    </div>
+    <footer><b>화양연화</b><p>이 페이지는 상담 기록을 정리하는 정적 화면입니다. 입력 내용의 서버 전송·계정 로그인·예약 접수·AI 자동 분석은 수행하지 않습니다.</p><p>입력 내용은 현재 탭의 메모리에만 있으며 새로고침하면 사라집니다. 필요한 기록은 파일로 저장해 주세요.</p></footer>
+  </main>
+<script>
+'use strict';
+// 입력은 현재 탭의 메모리에서만 처리하며 외부로 보내지 않는다.
+const $ = id => document.getElementById(id);
+const form = $('consultation');
+let recordId;
+let prepared = null;
+let dirty = true;
+
+function todayKst() {
+  const parts = new Intl.DateTimeFormat('en', {timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const value = type => parts.find(p => p.type === type).value;
+  return `${value('year')}-${value('month')}-${value('day')}`;
+}
+
+function init() {
+  form.reset();
+  $('date').value = todayKst();
+  recordId = `CONSULT-${todayKst().replaceAll('-','')}-${crypto.getRandomValues(new Uint32Array(1))[0].toString(16).padStart(8,'0')}`;
+  prepared = null;
+  dirty = true;
+  $('result').hidden = true;
+  $('empty').hidden = false;
+  $('error').textContent = '';
+  $('status').textContent = '';
+  updateConditions();
+}
+
+function updateConditions() {
+  const otherRole = $('role').value === 'other';
+  const otherChannel = $('channel').value === 'other';
+  $('other-role-wrap').hidden = !otherRole;
+  $('other-role').required = otherRole;
+  $('other-channel-wrap').hidden = !otherChannel;
+  $('other-channel').required = otherChannel;
+  $('mode-badge').textContent = $('mode').value === 'demo' ? '가상 시연' : '실제 상담';
+}
+
+function markDirty() {
+  dirty = true;
+  updateConditions();
+  if (prepared) {
+    $('status').textContent = '입력 내용이 바뀌었습니다. 미리보기를 다시 확인해 주세요.';
+    $('download-json').disabled = true;
+    $('download-md').disabled = true;
+  }
+}
+
+function fields() {
+  const text = id => $(id).value.trim();
+  return {
+    date:text('date'), role:text('role') === 'other' ? text('other-role') : text('role'),
+    situation:text('situation'), goal:text('goal'), concern:text('concern'),
+    channel:text('channel') === 'other' ? text('other-channel') : text('channel'),
+    quote:text('quote'), limitations:text('limitations'), demo:text('mode') === 'demo',
+    hypotheses:[...form.querySelectorAll('[name=hypothesis]:checked')].map(e => e.value)
+  };
+}
+
+function prepare() {
+  $('error').textContent = '';
+  if (!form.reportValidity()) return false;
+  const v = fields();
+  if (!v.role || !v.situation || !v.goal || !v.concern || !v.channel || !v.quote) {
+    $('error').textContent = '필수 항목에 공백이 아닌 내용을 입력해 주세요.';
+    return false;
+  }
+  const mode = v.demo ? '가상 상담 시연' : '상담 기록';
+  const sourceName = `${recordId}.md`;
+  const elements = {
+    고객군:`상담자 역할: ${v.role}`, 상황:v.situation, 목표:v.goal,
+    페인게인:v.concern, 접점:v.channel,
+    제품반응:`${v.demo ? '가상 발언' : '상담 발언'}: ${v.quote}`
+  };
+  const record = {
+    id:recordId, kind:'research', date:v.date, is_demo:v.demo,
+    source_id:sourceName, source_group:recordId.toLowerCase(), source_type:'상담', role:v.role,
+    summary:`${mode}. 날짜는 상담 기록일. 상황: ${v.situation} 목표: ${v.goal}${v.demo ? ' 실제 고객·인터뷰·구매 행동이 아닌 시연 자료다.' : ' 상담 발언과 실제 구매·촬영 행동은 구분한다.'}`,
+    elements, hypotheses:v.hypotheses,
+    limitations:[v.demo ? '가상 샘플이며 실제 고객 근거·가설 검증에 사용하지 않는다.' : '이 기록만으로 구매·참여·동의·가설 통과를 확정하지 않는다.',v.limitations].filter(Boolean).join(' ')
+  };
+  const memo = [`# ${mode} — ${recordId}`,'',`기록일: ${v.date}`,`시연 여부: ${v.demo ? '예 — 실제 고객 아님' : '아니오'}`,
+    `역할: ${v.role}`,'','## 상황과 계기',v.situation,'','## 원하는 결과',v.goal,'','## 걱정과 망설임',v.concern,
+    '','## 유입 경로',v.channel,'','## 상담 발언',v.quote,'','## 미확인 사항',record.limitations,
+    '',`관련 가설(담당자 지정): ${v.hypotheses.join(', ') || '미지정'}`,'','이 파일은 상담 원문 메모이며 가설의 통과 판정을 의미하지 않습니다.',''].join('\n');
+  prepared = {record, memo, sourceName};
+  dirty = false;
+  $('record-id').textContent = recordId;
+  $('record-summary').replaceChildren();
+  for (const [title,value] of [['기록 구분',mode],['상담자 역할',v.role],['상황과 계기',v.situation],['원하는 결과',v.goal],['걱정되는 점',v.concern],['유입 경로',v.channel],['관련 가설',v.hypotheses.join(' · ') || '미지정']]) {
+    const dt=document.createElement('dt'), dd=document.createElement('dd');
+    dt.textContent=title; dd.textContent=value; $('record-summary').append(dt,dd);
+  }
+  $('quote-preview').textContent=`“${v.quote}”`;
+  $('record-limits').textContent=record.limitations;
+  $('json-preview').textContent=JSON.stringify(record,null,2);
+  $('empty').hidden=true; $('result').hidden=false;
+  $('download-json').disabled=false; $('download-md').disabled=false;
+  $('status').textContent='미리보기를 만들었습니다. 아직 파일 저장이나 서버 접수는 하지 않았습니다.';
+  return true;
+}
+
+function sample() {
+  if (dirty && (fields().situation || fields().quote) && !window.confirm('작성 중인 내용을 가상 예시로 바꿀까요?')) return;
+  init();
+  const values = {role:'자녀·구매자 후보',situation:'어머니의 칠순이 3개월 남음',goal:'어머니의 삶과 목소리를 가족에게 남기고 싶음',concern:'어머니가 촬영을 부담스러워할까 걱정됨',channel:'지인 소개',quote:'가격보다 어머니가 자연스럽게 이야기하실 수 있을지가 궁금해요.',limitations:'가상 상담 예시. 실제 인물의 반응·구매 의사·촬영 동의는 확인한 것이 아닙니다.'};
+  Object.entries(values).forEach(([key,value])=>$(key).value=value);
+  form.querySelector('[value=H3]').checked=true;
+  form.querySelector('[value=H4]').checked=true;
+  updateConditions();
+  prepare();
+}
+
+function download(kind) {
+  if (!prepared || dirty) { $('status').textContent='미리보기를 먼저 확인해 주세요.'; return; }
+  const json = kind === 'json';
+  const content = json ? JSON.stringify(prepared.record,null,2)+'\n' : prepared.memo;
+  const blob = new Blob([content],{type:json?'application/json;charset=utf-8':'text/markdown;charset=utf-8'});
+  const url=URL.createObjectURL(blob), a=document.createElement('a');
+  a.href=url; a.download=json?`${recordId}.json`:prepared.sourceName;
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  $('status').textContent=`${json?'JSON 기록':'상담 메모'} 다운로드를 요청했습니다. 다운로드 폴더에서 확인해 주세요.`;
+}
+
+form.addEventListener('submit',event=>{event.preventDefault();prepare();});
+form.addEventListener('input',markDirty);
+form.addEventListener('change',markDirty);
+$('sample').addEventListener('click',sample);
+$('sample-preview').addEventListener('click',sample);
+$('new-record').addEventListener('click',()=>{if ((fields().situation || fields().quote) && !window.confirm('현재 내용을 비우고 새 기록을 만들까요?')) return; init();});
+$('download-json').addEventListener('click',()=>download('json'));
+$('download-md').addEventListener('click',()=>download('md'));
+init();
+
+</script>
+</body></html>
