@@ -8,13 +8,15 @@
   <style>
 :root{--ink:#263d35;--green:#285b49;--muted:#7d877b;--line:#dee3d8;--paper:#f5f5ef;--white:#fff;--pale:#e9efdf}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 "Malgun Gothic","Apple SD Gothic Neo",sans-serif;word-break:keep-all}button,input,textarea,select{font:inherit}button,a,input,textarea,select{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}[hidden]{display:none!important}a{color:inherit}.topbar{height:90px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 max(30px,calc((100vw - 1280px)/2))}.brand{text-decoration:none;font-weight:700;font-size:25px;letter-spacing:-1px}.brand span{font-size:11px;color:var(--muted);font-weight:400;display:block;letter-spacing:0}.top-note{font-size:10px;letter-spacing:3px;color:var(--muted)}.badge{font-size:11px;padding:5px 11px;border:1px solid #ccd8be;color:var(--green);border-radius:20px;white-space:nowrap}main{max-width:1340px;margin:auto;padding:0 30px}.intro{display:flex;justify-content:space-between;gap:40px;padding:55px 0 40px;align-items:center}.eyebrow{font-size:11px;letter-spacing:1px;color:var(--green);font-weight:700;margin:0 0 14px}h1{font-size:43px;line-height:1.35;letter-spacing:-2px;margin:0 0 20px;font-weight:600}.lead{color:#72806e;font-size:14px;margin:0}.intro-card{border-left:1px solid #cad5be;padding:8px 0 8px 35px;min-width:300px}.flower{font-size:50px;line-height:1;color:#96a66c}.intro-card p{font-size:17px;font-weight:600;margin:12px 0}.intro-card small{font-size:12px;color:var(--muted)}.workspace{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(340px,1fr);gap:32px;align-items:start}form{background:white;border:1px solid var(--line);border-radius:14px;padding:30px}.form-top{display:flex;align-items:center;justify-content:space-between;gap:14px}h2{font-size:22px;font-weight:600;line-height:1.5;margin:0 0 9px;letter-spacing:-.5px}.muted{font-size:12px;color:var(--muted);margin:0;white-space:pre-wrap}.text-button{background:none;border:0;color:var(--green);padding:0;font-size:12px;text-align:left;white-space:normal}.text-button:hover{text-decoration:underline}.section{border-top:1px solid #e7ebdf;margin-top:25px;padding-top:24px}.section-heading{display:flex;align-items:center;gap:12px;margin-bottom:19px}.section-heading span{font-size:10px;color:var(--green);background:var(--pale);border-radius:50%;width:28px;height:28px;display:grid;place-items:center}.section h3{font-size:16px;font-weight:600;margin:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:12px;font-weight:600;margin:0 0 17px}input:not([type=checkbox]),select,textarea{display:block;width:100%;border:1px solid #d9dfd0;border-radius:7px;background:#fcfdf9;color:var(--ink);padding:11px 12px;margin-top:7px;font-size:14px;line-height:1.6}input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #73925a;outline-offset:3px}textarea{resize:vertical;min-height:75px}textarea::placeholder,input::placeholder{color:#a0a797;font-size:12px}.hint{font-size:11px;color:#88917d;margin:4px 0 16px}.primary,.secondary{border-radius:7px;padding:11px 16px;font-size:13px;text-align:center}.primary{background:var(--green);color:white;border:1px solid var(--green)}.primary:hover{background:#1f4b3b}.secondary{background:white;color:var(--green);border:1px solid #cdd7bf}.secondary:hover{background:#f3f6eb}.actions{display:flex;align-items:center;gap:12px;margin-top:20px}.actions .primary{flex:1;text-align:left;display:flex;justify-content:space-between}.actions .secondary{font-size:11px}.form-error{color:#a34b39;font-size:12px;white-space:pre-wrap}fieldset{padding:0;border:0;margin:24px 0 0}legend{font-size:12px;font-weight:600;margin-bottom:12px}.optional{font-size:10px;color:var(--muted);font-weight:400;margin-left:8px}.hypotheses{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hypotheses label{margin:0;font-size:11px;font-weight:400;display:flex;align-items:center;gap:7px}.hypotheses input{accent-color:var(--green)}.preview-column{position:sticky;top:25px;display:grid;gap:20px}.preview{background:#e9efdf;border:1px solid #d9e2ca;border-radius:14px;padding:28px}.preview-head{display:flex;justify-content:space-between;align-items:start;gap:10px}.preview-head .eyebrow{font-size:9px;margin-top:6px}.preview-head .badge{background:#f6f8ef}.preview h2{font-size:23px;margin-top:6px}.empty-symbol{font-size:65px;color:#a2b482;text-align:center;line-height:1.1;margin:30px 0 14px}#empty{text-align:center;padding:10px 0 25px}#empty p{font-size:13px;color:#7d8a71}#empty .text-button{font-size:11px;margin-top:18px}.record-id{font-size:10px;overflow-wrap:anywhere;color:#7f8c71;margin:20px 0}dl{margin:0}dt{font-size:10px;color:#7a876e;margin-top:17px}dd{font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere;margin:3px 0}.quote{border-left:3px solid #acb88c;padding:9px 0 9px 14px;margin:23px 0 17px;font-size:14px;white-space:pre-wrap}.downloads{display:grid;gap:9px;margin:24px 0 13px}.preview .hint{font-size:10px}.guide{border:1px solid var(--line);background:#fff;border-radius:12px;padding:22px 25px}.guide h3{font-size:14px;margin:0 0 16px}.guide ol{padding-left:20px;font-size:12px;color:#738168;margin-bottom:20px}.guide li{padding:0 0 13px 5px}.guide b{font-weight:500;color:var(--ink)}code{font-family:monospace;font-size:11px;overflow-wrap:anywhere}.guide p{font-size:11px;color:var(--muted);margin:0}details{border-top:1px solid #cfd9bf;padding-top:15px;margin-top:15px}summary{font-size:11px;cursor:pointer;color:var(--green)}pre{font-size:10px;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f8ed;padding:12px;border-radius:5px;max-height:350px;overflow:auto}#status{font-size:11px;color:var(--green);margin:12px 0 0}footer{border-top:1px solid var(--line);margin:45px 0 0;padding:25px 0 35px;display:grid;grid-template-columns:100px 1fr;gap:5px 30px}footer b{grid-row:1/3;font-size:18px}footer p{font-size:10px;color:var(--muted);margin:0}@media(max-width:900px){.workspace{grid-template-columns:1fr}.preview-column{position:static}.intro-card{display:none}.intro{padding:35px 0}.top-note{display:none}h1{font-size:36px}.preview h2 br{display:none}}@media(max-width:500px){main{padding:0 18px}.topbar{padding:0 18px;height:75px}.topbar .badge{font-size:9px}.brand{font-size:22px}form{padding:22px 18px}.form-top{align-items:start;flex-direction:column}.two{grid-template-columns:1fr;gap:0}.actions{flex-direction:column;align-items:stretch}.preview{padding:24px}.hypotheses{grid-template-columns:1fr 1fr}footer{grid-template-columns:1fr}footer b{grid-row:auto}h1{font-size:31px}}
 
+.connection{margin:20px 0}.connection label{margin-top:12px}.connection input{background:#f9fbf5}.connection p{font-size:11px}#send{width:100%;margin-top:15px}#connection-status{font-size:11px;color:var(--green)}
+
 </style>
   
 </head>
 <body>
   <header class="topbar"><a class="brand" href="./">화양연화<span>가족의 삶을, 오래도록.</span></a><span class="top-note">CONSULTATION JOURNAL</span><span class="badge">브라우저에서만 작성</span></header>
   <main>
-    <section class="intro"><div><p class="eyebrow">화양연화 · 상담 기록 도구</p><h1>이야기의 시작을<br>차분히 기록해 주세요.</h1><p class="lead">누가, 어떤 계기로, 무엇을 남기고 싶어 하는지.<br>상담에서 들은 말과 아직 확인하지 못한 점을 구분해 정리합니다.</p></div><div class="intro-card"><span class="flower" aria-hidden="true">✳</span><p>입력 → 확인 → 파일 저장</p><small>문의 접수나 맥미니 자동 전송 기능은 없습니다.<br>작성한 내용은 JSON과 메모로 내려받습니다.</small></div></section>
+    <section class="intro"><div><p class="eyebrow">화양연화 · 상담 기록 도구</p><h1>이야기의 시작을<br>차분히 기록해 주세요.</h1><p class="lead">누가, 어떤 계기로, 무엇을 남기고 싶어 하는지.<br>상담에서 들은 말과 아직 확인하지 못한 점을 구분해 정리합니다.</p></div><div class="intro-card"><span class="flower" aria-hidden="true">✳</span><p>입력 → 확인 → 파일 저장</p><small>기록을 확인한 뒤 파일로 저장하거나<br>인증된 맥미니 시연환경으로 전송합니다.</small></div></section>
     <div class="workspace">
       <form id="consultation" novalidate>
         <div class="form-top"><div><h2>새 상담 기록</h2><p class="muted">별표(*)는 필수 항목입니다. 이름·연락처는 입력하지 않습니다.</p></div><button type="button" class="text-button" id="sample">가상 예시 채우기 ↗</button></div>
@@ -42,21 +44,23 @@
       <aside class="preview-column">
         <section class="preview"><div class="preview-head"><p class="eyebrow">RECORD PREVIEW</p><span class="badge" id="mode-badge">가상 시연</span></div><h2>한 건의 상담이<br>다음 질문의 근거가 됩니다.</h2><div id="empty"><div class="empty-symbol" aria-hidden="true">✳</div><p>왼쪽 항목을 작성한 뒤<br>‘기록 미리보기’를 눌러 주세요.</p><button type="button" class="text-button" id="sample-preview">앞서 사용한 가상 상담 불러오기 ↗</button></div>
           <div id="result" hidden><p class="record-id" id="record-id"></p><dl id="record-summary"></dl><div id="quote-preview" class="quote"></div><p id="record-limits" class="muted"></p><div class="downloads"><button type="button" class="primary" id="download-json">기록 JSON 저장 ↓</button><button type="button" class="secondary" id="download-md">상담 메모 저장 ↓</button></div><p class="hint">내용을 고치면 미리보기를 다시 확인한 뒤 저장해 주세요. 두 파일은 서로 연결된 한 건의 기록입니다.</p><details><summary>내보내는 JSON 보기</summary><pre id="json-preview"></pre></details></div>
-          <p id="status" role="status" aria-live="polite"></p>
+          <details class="connection"><summary>맥미니 임시 연결 · 가상 상담 전용</summary><p class="hint">수신 주소와 인증키는 현재 탭에서만 사용합니다. 가상 기록만 별도 시연 Wiki에 전송합니다.</p><label>수신 HTTPS 주소<input id="receiver-url" type="url" placeholder="https://…trycloudflare.com" autocomplete="off"></label><label>연결 인증키<input id="receiver-token" type="password" autocomplete="new-password" placeholder="맥미니 연결 설정의 인증키"></label><button type="button" class="secondary" id="connect">연결 확인</button><p id="connection-status" role="status"></p></details><button type="button" class="primary" id="send" disabled>가상 상담을 맥미니로 전송 →</button><p id="status" role="status" aria-live="polite"></p>
         </section>
         <section class="guide"><h3>Wiki에 반영하는 순서</h3><ol><li><b>상담 메모(.md)</b>를<br><code>inbox/documents/</code>에 넣기</li><li><b>기록(.json)</b>을<br><code>inbox/records/</code>에 넣기</li><li>수집기 실행 중이면 다음 확인 주기에<br>고객 근거 현황·출처·이력 확인</li></ol><p>시연은 분리된 시연환경에서 진행합니다. 가상 기록은 실제 고객 근거로 집계하지 않습니다.</p></section>
       </aside>
     </div>
-    <footer><b>화양연화</b><p>이 페이지는 상담 기록을 정리하는 정적 화면입니다. 입력 내용의 서버 전송·계정 로그인·예약 접수·AI 자동 분석은 수행하지 않습니다.</p><p>입력 내용은 현재 탭의 메모리에만 있으며 새로고침하면 사라집니다. 필요한 기록은 파일로 저장해 주세요.</p></footer>
+    <footer><b>화양연화</b><p>이 페이지는 상담 기록을 정리하는 정적 화면입니다. 연결을 설정하고 전송 버튼을 누른 경우에만 지정한 수신기로 보냅니다. 계정 로그인·예약 접수·AI 자동 분석은 수행하지 않습니다.</p><p>입력 내용은 현재 탭의 메모리에만 있으며 새로고침하면 사라집니다. 필요한 기록은 파일로 저장해 주세요.</p></footer>
   </main>
 <script>
 'use strict';
-// 입력은 현재 탭의 메모리에서만 처리하며 외부로 보내지 않는다.
+// 전송 버튼을 누르기 전까지 입력과 연결 설정은 현재 탭에만 둔다.
 const $ = id => document.getElementById(id);
 const form = $('consultation');
 let recordId;
 let prepared = null;
 let dirty = true;
+let connection = null;
+let sending = false;
 
 function todayKst() {
   const parts = new Intl.DateTimeFormat('en', {timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
@@ -75,6 +79,7 @@ function init() {
   $('error').textContent = '';
   $('status').textContent = '';
   updateConditions();
+  updateSendButton();
 }
 
 function updateConditions() {
@@ -89,6 +94,7 @@ function updateConditions() {
 
 function markDirty() {
   dirty = true;
+  updateSendButton();
   updateConditions();
   if (prepared) {
     $('status').textContent = '입력 내용이 바뀌었습니다. 미리보기를 다시 확인해 주세요.';
@@ -136,6 +142,7 @@ function prepare() {
     '',`관련 가설(담당자 지정): ${v.hypotheses.join(', ') || '미지정'}`,'','이 파일은 상담 원문 메모이며 가설의 통과 판정을 의미하지 않습니다.',''].join('\n');
   prepared = {record, memo, sourceName};
   dirty = false;
+  updateSendButton();
   $('record-id').textContent = recordId;
   $('record-summary').replaceChildren();
   for (const [title,value] of [['기록 구분',mode],['상담자 역할',v.role],['상황과 계기',v.situation],['원하는 결과',v.goal],['걱정되는 점',v.concern],['유입 경로',v.channel],['관련 가설',v.hypotheses.join(' · ') || '미지정']]) {
@@ -182,6 +189,60 @@ $('sample-preview').addEventListener('click',sample);
 $('new-record').addEventListener('click',()=>{if ((fields().situation || fields().quote) && !window.confirm('현재 내용을 비우고 새 기록을 만들까요?')) return; init();});
 $('download-json').addEventListener('click',()=>download('json'));
 $('download-md').addEventListener('click',()=>download('md'));
+
+function updateSendButton() {
+  $('send').disabled = !connection || !prepared || dirty || !prepared.record.is_demo || sending;
+}
+function connectionInputChanged() {
+  connection = null;
+  $('connection-status').textContent = '연결 설정이 바뀌었습니다. 연결 확인을 눌러 주세요.';
+  updateSendButton();
+}
+async function requestReceiver(config, path, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(()=>controller.abort(), 10000);
+  try {
+    const response = await fetch(config.url + path, {
+      ...options, signal:controller.signal, credentials:'omit', redirect:'error', cache:'no-store', referrerPolicy:'no-referrer',
+      headers:{'Authorization':'Bearer '+config.token,...(options.body ? {'Content-Type':'application/json'} : {})}
+    });
+    const data = await response.json();
+    if (!response.ok) throw Error(data.error || '수신기에 연결하지 못했습니다.');
+    return data;
+  } finally { clearTimeout(timer); }
+}
+$('receiver-url').addEventListener('input',connectionInputChanged);
+$('receiver-token').addEventListener('input',connectionInputChanged);
+$('connect').addEventListener('click', async()=>{
+  connection = null; updateSendButton(); $('connect').disabled=true;
+  try {
+    const url = new URL($('receiver-url').value.trim());
+    const token = $('receiver-token').value.trim();
+    if(url.protocol!=='https:' || url.username || url.password || url.search || url.hash || url.pathname!=='/' || !token) throw Error('HTTPS 기본 주소와 인증키를 입력해 주세요.');
+    const config = {url:url.origin,token};
+    const data = await requestReceiver(config,'/health');
+    if(data.mode!=='demo-only') throw Error('가상 상담 전용 수신기를 확인하지 못했습니다.');
+    connection=config;
+    $('connection-status').textContent='맥미니 시연 수신기에 연결됐습니다. 실제 상담은 전송할 수 없습니다.';
+  } catch(error) { $('connection-status').textContent='연결 실패: '+error.message; }
+  finally { $('connect').disabled=false; updateSendButton(); }
+});
+$('send').addEventListener('click',async()=>{
+  if(!connection || !prepared || dirty || !prepared.record.is_demo || sending)return;
+  const config=connection, payload={record:prepared.record,memo:prepared.memo};
+  sending=true;updateSendButton();$('status').textContent='맥미니에 가상 상담을 전송하고 있습니다…';
+  try {
+    const saved=await requestReceiver(config,'/consultations',{method:'POST',body:JSON.stringify(payload)});
+    $('status').textContent='수신 폴더 저장 완료 · 5초 간격 수집기의 현황 반영을 확인합니다…';
+    for(let i=0;i<5;i++){
+      const check=await requestReceiver(config,'/records/'+encodeURIComponent(saved.id));
+      if(check.reflected){$('status').textContent='맥미니 시연 Wiki에 반영 완료 · '+saved.id+(saved.duplicate?' (중복 추가 없이 확인)':'');return;}
+      await new Promise(resolve=>setTimeout(resolve,3000));
+    }
+    $('status').textContent='맥미니 저장은 완료됐지만 현황 반영은 아직 확인되지 않았습니다. 수집기 상태를 확인해 주세요.';
+  } catch(error) { $('status').textContent='전송 확인 실패: '+error.message+' 같은 기록의 재전송은 중복 추가되지 않습니다.'; }
+  finally {sending=false;updateSendButton();}
+});
 init();
 
 </script>
